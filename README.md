@@ -1,7 +1,7 @@
 # glowie - Arch Installation Script
 
 
-This script deploys a full Arch Linux Install w/ BSPWM, Polybar and rofi.
+This script deploys a full Arch Linux Install w/ bspwm, polybar and rofi.
 
 ![UI](https://cocaine.supply/GaKxpXRfNG.png?key=6B2JXlVpM6UOfQ)
 ## Installation Guide
@@ -15,7 +15,7 @@ cd glowie
 bash glowie.sh
 ```
 
-The default username is snow
+The default username is snow  
 After it finishes run the following commands:
 
 ```
