@@ -1,7 +1,7 @@
-# Arch Installation Script
+# glowie - Arch Installation Script
 
 
-This Script installs a full Arch Linux system with a custom Rice and BSPWM + Polybar.
+This script deploys a full Arch Linux Install w/ BSPWM, Polybar and rofi.
 
 ## Boot Arch ISO
 
@@ -39,7 +39,7 @@ Super + F4 vim
 >note     
 >Workspace 0 is assigned as workspace 10
 
-### No Wifi
+## No Wifi
 
 #1: Run `iwctl`
 
