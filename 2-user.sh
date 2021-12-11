@@ -16,7 +16,6 @@ cd ani-cli >/dev/null 2>&1
 sudo make >/dev/null 2>&1
 cd ~ >/dev/null 2>&1
 touch "$HOME/.cache/zshhistory" >/dev/null 2>&1
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k >/dev/null 2>&1
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc >/dev/null 2>&1
 git clone "https://github.com/peroxyacetic/glowie-icons" >/dev/null 2>&1
