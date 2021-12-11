@@ -4,6 +4,7 @@ echo -e "\nINSTALLING AUR SOFTWARE\n"
 # You can solve users running this script as root with this and then doing the same for the next for statement. However I will leave this up to you.
 
 echo "CLONING: YAY"
+mkdir /home/snow/source
 cd /home/snow/source >/dev/null 2>&1
 git clone "https://aur.archlinux.org/yay.git" >/dev/null 2>&1
 cd yay >/dev/null 2>&1
@@ -12,6 +13,10 @@ cd /home/snow/source >/dev/null 2>&1
 git clone "https://github.com/pystardust/ani-cli.git" >/dev/null 2>&1
 cd ani-cli >/dev/null 2>&1
 makepkg -si --noconfirm >/dev/null 2>&1
+cd /home/snow/source >/dev/null 2>&1
+git clone "https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git" >/dev/null 2>&1
+cd Top-5-Bootloader-Themes >/dev/null 2>&1
+bash install.sh >/dev/null 2>&1
 cd ~ >/dev/null 2>&1
 touch "$HOME/.cache/zshhistory" >/dev/null 2>&1
 git clone "https://github.com/ChrisTitusTech/zsh" >/dev/null 2>&1

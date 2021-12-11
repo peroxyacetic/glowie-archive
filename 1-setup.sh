@@ -69,6 +69,7 @@ PKGS=(
 'grub'
 'grub-customizer'
 'htop'
+'imagemagick'
 'kitty'
 'libnotify'
 'linux'
