@@ -2,6 +2,7 @@
 
 
 This script deploys a full Arch Linux Install w/ BSPWM, Polybar and rofi.
+
 ![UI](https://i.imgur.com/L6ymPbZ.png)
 ## Boot Arch ISO
 
