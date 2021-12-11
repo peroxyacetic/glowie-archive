@@ -32,7 +32,7 @@ Super + Alt + R restart wm
 Super + Escape restart keybinding     
 Super + X lockscreen     
 
-Super + F1 Chromium
+Super + F1 Chromium     
 Super + F2 Thunar    
 Super + F3 Spotify     
 Super + F4 vim  
