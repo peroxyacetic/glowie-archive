@@ -120,16 +120,10 @@ done
 
 pip install pywal >/dev/null 2>&1
 
-newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#glowie/d" /etc/sudoers
-	echo "$* #glowie" >> /etc/sudoers ;}
-
 echo -e "\nDone!\n"
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel -s /bin/bash snow >/dev/null 2>&1
-	newperms "%wheel ALL=(ALL) ALL #glowie
-	%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/paru,/usr/bin/pacman -Syyuw --noconfirm" 
 	passwd snow
 	cp -R /root/glowie /home/snow/ >/dev/null 2>&1
     chown -R snow: /home/snow/glowie >/dev/null 2>&1
