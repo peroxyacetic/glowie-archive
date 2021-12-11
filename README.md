@@ -3,7 +3,7 @@
 
 This script deploys a full Arch Linux Install w/ bspwm, polybar and rofi.
 
-![UI](https://cocaine.supply/GaKxpXRfNG.png?key=6B2JXlVpM6UOfQ)
+![UI](https://i.imgur.com/b35ux8I.png)
 ## Installation Guide
 
 From initial Prompt type the following commands:
