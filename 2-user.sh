@@ -30,11 +30,12 @@ PKGS=(
 )
 
 for PKG in "${PKGS[@]}"; do
+    echo "Installing $PKG"
     yay -S --noconfirm $PKG >/dev/null 2>&1
 done
 
 export PATH=$PATH:~/.local/bin >/dev/null 2>&1
-cp -r $HOME/glowie/dotfiles/* $HOME/ >/dev/null 2>&1
+cp -r $HOME/glowie/dotfiles/* $HOME >/dev/null 2>&1
 
 echo -e "\nDone!\n"
 exit

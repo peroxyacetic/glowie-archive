@@ -13,7 +13,7 @@ From initial Prompt type the following commands:
 pacman -Sy git
 git clone https://github.com/peroxyacetic/glowie
 cd glowie
-./glowie.sh
+bash glowie.sh
 ```
 
 ## Troubleshooting

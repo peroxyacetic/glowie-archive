@@ -54,6 +54,7 @@ PKGS=(
 'xorg-xprop'
 'xorg-xbacklight'
 'xorg-xinit'
+'xcompmgr'
 'adobe-source-han-sans-jp-fonts'
 'base'
 'base-devel'
@@ -82,7 +83,6 @@ PKGS=(
 'ntfs-3g'
 'p7zip'
 'pamixer'
-'picom'
 'pipewire'
 'pipewire-pulse'
 'pulsemixer'
@@ -118,8 +118,7 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo -e "\nDone!\n"
-if ! source install.conf; then
-	read -p "Please enter username:" username
+read -p "Please enter username:" username
 echo "username=$username" >> ${HOME}/glowie/install.conf >/dev/null 2>&1
 fi
 if [ $(whoami) = "root"  ];

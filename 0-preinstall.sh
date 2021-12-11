@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )" >/dev/null 2>&1
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download          "
 echo "-------------------------------------------------"
-iso=$(curl -4 ifconfig.co/country-iso)
-timedatectl set-ntp true
-pacman -S --noconfirm pacman-contrib terminus-font
-setfont ter-v22b
-sed -i 's/^#Para/Para/' /etc/pacman.conf
-pacman -S --noconfirm reflector rsync grub
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+iso=$(curl -4 ifconfig.co/country-iso) >/dev/null 2>&1
+timedatectl set-ntp true >/dev/null 2>&1
+pacman -S --noconfirm pacman-contrib terminus-font >/dev/null 2>&1
+setfont ter-v22b >/dev/null 2>&1
+sed -i 's/^#Para/Para/' /etc/pacman.conf >/dev/null 2>&1
+pacman -S --noconfirm reflector rsync grub >/dev/null 2>&1
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup >/dev/null 2>&1
 echo -e "-------------------------------------------------------------------------"
 echo -e "-Setting up $iso mirrors for faster downloads"
 echo -e "-------------------------------------------------------------------------"
 
-reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
-mkdir /mnt
+reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist >/dev/null 2>&1
+mkdir /mnt >/dev/null 2>&1
 
 
 echo -e "\nInstalling prereqs...\n$HR"
-pacman -S --noconfirm gptfdisk btrfs-progs
+pacman -S --noconfirm gptfdisk btrfs-progs >/dev/null 2>&1
 
 echo "-------------------------------------------------"
 echo "-------select your disk to format----------------"
@@ -38,31 +38,31 @@ echo -e "\nFormatting disk...\n$HR"
 echo "--------------------------------------"
 
 # disk prep
-sgdisk -Z ${DISK} # zap all on disk
-sgdisk -a 2048 -o ${DISK} # new gpt disk 2048 alignment
+sgdisk -Z ${DISK} >/dev/null 2>&1 # zap all on disk
+sgdisk -a 2048 -o ${DISK} >/dev/null 2>&1 # new gpt disk 2048 alignment
 
 # create partitions
-sgdisk -n 1::+1M --typecode=1:ef02 --change-name=1:'BIOSBOOT' ${DISK} # partition 1 (BIOS Boot Partition)
-sgdisk -n 2::+100M --typecode=2:ef00 --change-name=2:'EFIBOOT' ${DISK} # partition 2 (UEFI Boot Partition)
-sgdisk -n 3::-0 --typecode=3:8300 --change-name=3:'ROOT' ${DISK} # partition 3 (Root), default start, remaining
+sgdisk -n 1::+1M --typecode=1:ef02 --change-name=1:'BIOSBOOT' ${DISK} >/dev/null 2>&1 # partition 1 (BIOS Boot Partition)
+sgdisk -n 2::+100M --typecode=2:ef00 --change-name=2:'EFIBOOT' ${DISK} >/dev/null 2>&1 # partition 2 (UEFI Boot Partition)
+sgdisk -n 3::-0 --typecode=3:8300 --change-name=3:'ROOT' ${DISK} >/dev/null 2>&1 # partition 3 (Root), default start, remaining
 if [[ ! -d "/sys/firmware/efi" ]]; then
-    sgdisk -A 1:set:2 ${DISK}
+    sgdisk -A 1:set:2 ${DISK} >/dev/null 2>&1
 fi
 
 # make filesystems
 echo -e "\nCreating Filesystems...\n$HR"
 if [[ ${DISK} =~ "nvme" ]]; then
-mkfs.vfat -F32 -n "EFIBOOT" "${DISK}p2"
-mkfs.btrfs -L "ROOT" "${DISK}p3" -f
-mount -t btrfs "${DISK}p3" /mnt
+mkfs.vfat -F32 -n "EFIBOOT" "${DISK}p2" >/dev/null 2>&1
+mkfs.btrfs -L "ROOT" "${DISK}p3" -f >/dev/null 2>&1
+mount -t btrfs "${DISK}p3" /mnt >/dev/null 2>&1
 else
-mkfs.vfat -F32 -n "EFIBOOT" "${DISK}2"
-mkfs.btrfs -L "ROOT" "${DISK}3" -f
-mount -t btrfs "${DISK}3" /mnt
+mkfs.vfat -F32 -n "EFIBOOT" "${DISK}2" >/dev/null 2>&1
+mkfs.btrfs -L "ROOT" "${DISK}3" -f >/dev/null 2>&1
+mount -t btrfs "${DISK}3" /mnt >/dev/null 2>&1
 fi
-ls /mnt | xargs btrfs subvolume delete
-btrfs subvolume create /mnt/@
-umount /mnt
+ls /mnt | xargs btrfs subvolume delete >/dev/null 2>&1
+btrfs subvolume create /mnt/@ >/dev/null 2>&1
+umount /mnt >/dev/null 2>&1
 ;;
 *)
 echo "Rebooting in 3 Seconds ..." && sleep 1
@@ -73,10 +73,10 @@ reboot now
 esac
 
 # mount target
-mount -t btrfs -o subvol=@ -L ROOT /mnt
-mkdir /mnt/boot
-mkdir /mnt/boot/efi
-mount -t vfat -L EFIBOOT /mnt/boot/
+mount -t btrfs -o subvol=@ -L ROOT /mnt >/dev/null 2>&1
+mkdir /mnt/boot >/dev/null 2>&1
+mkdir /mnt/boot/efi >/dev/null 2>&1
+mount -t vfat -L EFIBOOT /mnt/boot/ >/dev/null 2>&1
 
 if ! grep -qs '/mnt' /proc/mounts; then
     echo "Drive is not mounted can not continue"

@@ -7,7 +7,7 @@ super + Return
 	kitty
 
 # program launcher
-super + @space
+super + d
 	rofi -show run -font "Iosevka Custom 14"
 
 # make sxhkd reload its configuration files:
@@ -24,7 +24,7 @@ super + alt + r
 super + alt + q
     clearine
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -128,20 +128,16 @@ Print
 	scrot
 	
 	
-	
 super + F1
-	$HOME/.config/polybar/launch.sh
+	chromium
 	
 super + F2
 	thunar
-	
-super + F3
-	chromium
 
-super + F4
-	kitty cmus
+super + F3
+	spotify
 	
-super + F5
+super + F4
 	kitty vim
 	
 super + F12
