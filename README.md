@@ -1,9 +1,7 @@
 # Arch Installation Script
 
 
-This Script installs a full Arch Linux system with the BSPWM Window Manager and Polybar.
-
----
+This Script installs a full Arch Linux system with a custom Rice and BSPWM + Polybar.
 
 ## Boot Arch ISO
 
@@ -16,9 +14,30 @@ cd glowie
 bash glowie.sh
 ```
 
-## Troubleshooting
+## bspwm
 
-__[Arch Linux Installation Guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__
+Super + Return Terminal     
+Super + q close     
+Super + d rofi     
+Super + 0-9 go to workspace x     
+Super + Shift + 0-9 move window to workspace x     
+Super + Alt + H, J, K ,L Increase window size       
+Super + Alt + Shift + H, J, K ,L Decrease window size    
+Super + S Toggle Floating mode     
+Super + T Toggle Tiling Mode     
+Super + F Toggle Fullscreen     
+Super + Alt + Q Powermenu (requires clearine)      
+Super + Alt + R restart wm     
+Super + Escape restart keybinding     
+Super + X lockscreen     
+
+Super + F1 Chromium
+Super + F2 Thunar    
+Super + F3 Spotify     
+Super + F4 vim  
+
+>note     
+>Workspace 0 is assigned as workspace 10
 
 ### No Wifi
 
