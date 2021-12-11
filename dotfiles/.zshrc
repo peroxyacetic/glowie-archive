@@ -11,6 +11,10 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/snow/.oh-my-zsh"
 
+alias logia="xfreerdp /u:snow /v:glowie.club /size:1920x1080"
+alias nf="neofetch"
+alias b='echo -e "enter brightness:\n"; read val; xrandr --output eDP-1 --brightness "${val}"'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
