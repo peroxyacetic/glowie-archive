@@ -119,13 +119,12 @@ done
 
 echo -e "\nDone!\n"
 read -p "Please enter username:" username
-echo "username=$username" >> ${HOME}/glowie/install.conf >/dev/null 2>&1
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel -s /bin/bash $username >/dev/null 2>&1
-	passwd $username
-	cp -R /root/glowie /home/$username/ >/dev/null 2>&1
-    chown -R $username: /home/$username/glowie >/dev/null 2>&1
+    useradd -m -G wheel -s /bin/bash snow >/dev/null 2>&1
+	passwd snow
+	cp -R /root/glowie /home/snow/ >/dev/null 2>&1
+    chown -R snow: /home/snow/glowie >/dev/null 2>&1
 	read -p "Please enter a hostname:" nameofmachine
 	echo $nameofmachine > /etc/hostname >/dev/null 2>&1
 else

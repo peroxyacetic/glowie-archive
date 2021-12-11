@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download          "
 echo "-------------------------------------------------"
-iso=$(curl -4 ifconfig.co/country-iso) >/dev/null 2>&1
+iso=$(curl -4 ifconfig.co/country-iso >/dev/null 2>&1)
 timedatectl set-ntp true >/dev/null 2>&1
 pacman -S --noconfirm pacman-contrib terminus-font >/dev/null 2>&1
 setfont ter-v22b >/dev/null 2>&1
