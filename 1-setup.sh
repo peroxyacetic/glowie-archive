@@ -132,9 +132,8 @@ then
     useradd -m -G wheel -s /bin/bash snow >/dev/null 2>&1
 	passwd snow
 	cp -R /root/glowie /home/snow/ >/dev/null 2>&1
-    chown -R snow: /home/snow/glowie >/dev/null 2>&1
-	read -p "Please enter a hostname:" nameofmachine
-	echo $nameofmachine > /etc/hostname >/dev/null 2>&1
+    	chown -R snow: /home/snow/glowie >/dev/null 2>&1
+	hostnamectl set-hostname Meito >/dev/null 2>&1
 else
 	echo "You are already a user proceed with aur installs"
 fi
