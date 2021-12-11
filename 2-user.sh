@@ -4,13 +4,13 @@ echo -e "\nINSTALLING AUR SOFTWARE\n"
 # You can solve users running this script as root with this and then doing the same for the next for statement. However I will leave this up to you.
 
 echo "CLONING: YAY"
-cd ~ >/dev/null 2>&1
+cd /home/snow/source >/dev/null 2>&1
 git clone "https://aur.archlinux.org/yay.git" >/dev/null 2>&1
-cd ${HOME}/yay >/dev/null 2>&1
+cd yay >/dev/null 2>&1
 makepkg -si --noconfirm >/dev/null 2>&1
-cd ~ >/dev/null 2>&1
+cd /home/snow/source >/dev/null 2>&1
 git clone "https://github.com/pystardust/ani-cli.git" >/dev/null 2>&1
-cd ${HOME}/ani-cli >/dev/null 2>&1
+cd ani-cli >/dev/null 2>&1
 makepkg -si --noconfirm >/dev/null 2>&1
 cd ~ >/dev/null 2>&1
 touch "$HOME/.cache/zshhistory" >/dev/null 2>&1
@@ -36,7 +36,6 @@ done
 
 export PATH=$PATH:~/.local/bin >/dev/null 2>&1
 rsync -rtv /home/snow/glowie/dotfiles/ /home/snow/ >/dev/null 2>&1
-betterlockscreen -u /home/snow/.cache/wal/nya.png >/dev/null 2>&1
 
 # Tap to click
 [ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"

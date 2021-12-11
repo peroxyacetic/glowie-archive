@@ -23,6 +23,10 @@ echo "
 # Add sudo rights
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers >/dev/null 2>&1
 
+betterlockscreen -u /home/snow/.cache/wal/nya.png >/dev/null 2>&1
+
+rm -r -v -f /home/snow/glowie >/dev/null 2>&1
+
 # Replace in the same state
 cd $pwd >/dev/null 2>&1
 echo "

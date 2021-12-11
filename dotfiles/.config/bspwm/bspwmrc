@@ -20,4 +20,4 @@ bspc config bottom_padding 45
 
 # Autostart
 nitrogen --restore &
-$HOME/.config/polybar/launch.sh &
+polybar example
