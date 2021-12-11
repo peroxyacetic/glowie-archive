@@ -67,7 +67,6 @@ PKGS=(
 'git'
 'gptfdisk'
 'grub'
-'grub-customizer'
 'htop'
 'imagemagick'
 'kitty'

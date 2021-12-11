@@ -35,7 +35,7 @@ Super + X lockscreen
 Super + F1 Chromium     
 Super + F2 Thunar    
 Super + F3 Spotify     
-Super + F4 vim  
+Super + F4 pulsemixer   
 
 >note     
 >Workspace 0 is assigned as workspace 10

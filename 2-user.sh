@@ -12,23 +12,18 @@ makepkg -si --noconfirm >/dev/null 2>&1
 cd /home/snow/source >/dev/null 2>&1
 git clone "https://github.com/pystardust/ani-cli.git" >/dev/null 2>&1
 cd ani-cli >/dev/null 2>&1
-makepkg -si --noconfirm >/dev/null 2>&1
-cd /home/snow/source >/dev/null 2>&1
-git clone "https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git" >/dev/null 2>&1
-cd Top-5-Bootloader-Themes >/dev/null 2>&1
-bash install.sh >/dev/null 2>&1
+sudo make >/dev/null 2>&1
 cd ~ >/dev/null 2>&1
 touch "$HOME/.cache/zshhistory" >/dev/null 2>&1
 git clone "https://github.com/ChrisTitusTech/zsh" >/dev/null 2>&1
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k >/dev/null 2>&1
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc >/dev/null 2>&1
 git clone "https://github.com/peroxyacetic/glowie-icons" >/dev/null 2>&1
-rsync -rtv /home/snow/glowie-icons/.icons/ /home/snow/ >/dev/null 2>&1
+rsync -rtv /home/snow/glowie-icons/ /home/snow/ >/dev/null 2>&1
 
 PKGS=(
 'nerd-fonts-fira-code'
 'noto-fonts-emoji'
-'papirus-icon-theme'
 'ttf-meslo' # Nerdfont package
 'polybar'
 'clearine'

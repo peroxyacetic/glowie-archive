@@ -20,4 +20,5 @@ bspc config bottom_padding 45
 
 # Autostart
 nitrogen --restore &
-polybar example
+polybar example &
+betterlockscreen -u /home/snow/.cache/wal/nya.png
