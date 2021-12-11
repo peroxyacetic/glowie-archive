@@ -18,5 +18,10 @@ bspc config left_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 45
 
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mpv desktop='^3'
+bspc rule -a Screenkey manage=off
+bspc rule -a Zathura state=tiled
+
 # Autostart
 nitrogen --restore
