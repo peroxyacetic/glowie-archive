@@ -10,5 +10,4 @@
 . "$HOME/.xprofile"
 
 ssh-agent sxhkd &
-exec bspwm &
-exec polybar example
+exec bspwm
