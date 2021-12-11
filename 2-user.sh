@@ -37,6 +37,7 @@ done
 
 export PATH=$PATH:~/.local/bin >/dev/null 2>&1
 rsync -rtv /home/snow/glowie/dotfiles/ /home/snow/ >/dev/null 2>&1
+chmod +x /home/snow/.config/bspwm/bspwmrc >/dev/null 2>&1
 
 echo -e "\nDone!\n"
 exit
