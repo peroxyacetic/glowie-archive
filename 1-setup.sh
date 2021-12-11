@@ -44,7 +44,6 @@ PKGS=(
     'xorg-server'
     'xorg-xwininfo'
     'xorg-xprop'
-    'xorg-xbacklight'
     'xorg-xinit'
     'xcompmgr'
     'adobe-source-han-sans-jp-fonts'
