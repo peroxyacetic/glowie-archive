@@ -11,4 +11,4 @@
 
 ssh-agent sxhkd &
 exec bspwm &
-polybar example
+exec polybar example

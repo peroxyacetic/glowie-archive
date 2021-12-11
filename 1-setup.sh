@@ -97,6 +97,7 @@ PKGS=(
 'sxiv'
 'sxhkd'
 'thunar'
+'ttc-iosevka'
 'ttf-font-awesome'
 'ufw'
 'unclutter'
@@ -117,8 +118,9 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed >/dev/null 2>&1
 done
 
+pip install pywal >/dev/null 2>&1
+
 echo -e "\nDone!\n"
-read -p "Please enter username:" username
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel -s /bin/bash snow >/dev/null 2>&1

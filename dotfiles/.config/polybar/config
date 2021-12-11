@@ -448,33 +448,13 @@ menu-2-1-exec = menu-open-0
 [module/rofi]
 type = custom/text
 
-content =  Nya!
+content = X
 content-foreground = ${colors.foreground-alt}
 
 
 
 
 click-left = rofi -show run -font "azukifontB 14"
-
-[module/thunar-icon]
-type = custom/text
-
-content =  
-content-foreground = ${colors.foreground-alt}
-
-click-left = thunar $HOME
-
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
-[module/browser]
-type = custom/text
-
-content =  
-content-foreground = ${colors.foreground-alt}
-
-
-
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
-click-left = chromium
 
 [module/ewmh]
 type = internal/xworkspaces
