@@ -15,6 +15,7 @@ cd glowie
 bash glowie.sh
 ```
 
+The default username is snow
 After it finishes run the following commands:
 
 ```
