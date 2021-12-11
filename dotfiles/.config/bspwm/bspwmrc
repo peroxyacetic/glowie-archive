@@ -25,4 +25,4 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Discord desktop='^6'
 
 # Autostart
-nitrogen --restore &
+nitrogen --restore
