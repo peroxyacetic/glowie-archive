@@ -17,6 +17,8 @@ touch "$HOME/.cache/zshhistory" >/dev/null 2>&1
 git clone "https://github.com/ChrisTitusTech/zsh" >/dev/null 2>&1
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k >/dev/null 2>&1
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc >/dev/null 2>&1
+git clone "https://github.com/peroxyacetic/glowie-icons" >/dev/null 2>&1
+rsync -rtv /home/snow/glowie-icons/.icons/ /home/snow/ >/dev/null 2>&1
 
 PKGS=(
 'nerd-fonts-fira-code'
