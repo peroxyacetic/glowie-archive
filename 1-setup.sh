@@ -32,7 +32,7 @@ timedatectl --no-ask-password set-ntp 1 >/dev/null 2>&1
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="en_US.UTF-8" >/dev/null 2>&1
 
 # Set keymaps
-localectl --no-ask-password set-keymap us >/dev/null 2>&1
+localectl --no-ask-password set-keymap de >/dev/null 2>&1
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers >/dev/null 2>&1
@@ -66,6 +66,7 @@ PKGS=(
 'dunst'
 'efibootmgr' # EFI boot
 'ffmpeg'
+'freerdp'
 'gcc'
 'git'
 'gptfdisk'
@@ -110,7 +111,6 @@ PKGS=(
 'unzip'
 'vim'
 'wget'
-'xfreerdp'
 'youtube-dl'
 'zathura'
 'zip'
