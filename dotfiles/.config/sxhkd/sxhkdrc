@@ -140,15 +140,3 @@ super + F3
 super + F4
 	kitty vim
 	
-super + F12
-	killall -q polybar
-	
-
-alt + F1
-	kitty gotop
-	
-alt + F2
-	connman-gtk 
-	
-alt + F4
-	bspc node -k

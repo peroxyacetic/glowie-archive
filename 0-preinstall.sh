@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+clear
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )" >/dev/null 2>&1
 echo "-------------------------------------------------"
 echo "Setting up mirrors for optimal download          "

@@ -14,6 +14,6 @@ timecolor=E9E3E5
 datecolor=E9E3E5
 loginbox=160f1766
 font="Iosevka Custom"
-locktext='Shikikan Sama....'
+locktext='Why are we still here...'
 lock_timeout=5
 time_format='%H:%M:%S'

@@ -4,7 +4,7 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
-#wal -i /home/snow/.cache/nya.png
+wal -i /home/snow/.cache/nya.png
 #xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 
 autostart="xcompmgr dunst unclutter pipewire"
