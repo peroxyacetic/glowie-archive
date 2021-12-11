@@ -25,7 +25,7 @@ PKGS=(
 'noto-fonts-emoji'
 'ttf-meslo' # Nerdfont package
 'polybar'
-'clearine'
+'clearine-git'
 'betterlockscreen'
 'spotify'
 'jellyfin-media-player'

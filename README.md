@@ -24,6 +24,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
+Run `betterlockscreen -u /home/snow/.cache/wal/nya.png`
+
 ## bspwm
 
 Super + Return Terminal     
