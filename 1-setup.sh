@@ -1,30 +1,22 @@
 #!/usr/bin/env bash
 
-echo "--------------------------------------"
-echo "--          Network Setup           --"
-echo "--------------------------------------"
+echo "Network is being setup"
 pacman -S networkmanager dhclient --noconfirm --needed >/dev/null 2>&1
 systemctl enable --now NetworkManager >/dev/null 2>&1
-echo "-------------------------------------------------"
-echo "Setting up mirrors for optimal download          "
-echo "-------------------------------------------------"
 pacman -S --noconfirm pacman-contrib curl >/dev/null 2>&1
 pacman -S --noconfirm reflector rsync >/dev/null 2>&1
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak >/dev/null 2>&1
 
 nc=$(grep -c ^processor /proc/cpuinfo)
 echo "You have " $nc" cores."
-echo "-------------------------------------------------"
 echo "Changing the makeflags for "$nc" cores."
 TOTALMEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*') >/dev/null 2>&1
 if [[  $TOTALMEM -gt 8000000 ]]; then
-sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf >/dev/null 2>&1
-echo "Changing the compression settings for "$nc" cores."
-sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf >/dev/null 2>&1
+    sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf >/dev/null 2>&1
+    echo "Changing the compression settings for "$nc" cores."
+    sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf >/dev/null 2>&1
 fi
-echo "-------------------------------------------------"
-echo "       Setup Language to US and set locale       "
-echo "-------------------------------------------------"
+echo "Setting up locale"
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen >/dev/null 2>&1
 locale-gen >/dev/null 2>&1
 timedatectl --no-ask-password set-timezone Europe/Berlin >/dev/null 2>&1
@@ -47,76 +39,76 @@ pacman -Sy --noconfirm >/dev/null 2>&1
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
-'mesa' # Essential Xorg First
-'xorg'
-'xorg-server'
-'xorg-xwininfo'
-'xorg-xprop'
-'xorg-xbacklight'
-'xorg-xinit'
-'xcompmgr'
-'adobe-source-han-sans-jp-fonts'
-'atool'
-'base'
-'base-devel'
-'bc'
-'bspwm'
-'chromium'
-'dosfstools'
-'dunst'
-'efibootmgr' # EFI boot
-'ffmpeg'
-'freerdp'
-'gcc'
-'git'
-'gptfdisk'
-'grub'
-'htop'
-'imagemagick'
-'kitty'
-'libnotify'
-'linux'
-'linux-firmware'
-'make'
-'man-db'
-'mediainfo'
-'moreutils'
-'mpv'
-'neofetch'
-'networkmanager'
-'nitrogen'
-'ntfs-3g'
-'p7zip'
-'pamixer'
-'pipewire'
-'pipewire-pulse'
-'pulsemixer'
-'python'
-'python-pip'
-'ranger'
-'rofi'
-'rsync'
-'scrot'
-'socat'
-'starship'
-'sudo'
-'sxiv'
-'sxhkd'
-'thunar'
-'ttc-iosevka'
-'ttf-font-awesome'
-'ufw'
-'unclutter'
-'unrar'
-'unzip'
-'vim'
-'wget'
-'youtube-dl'
-'zathura'
-'zip'
-'zsh'
-'zsh-syntax-highlighting'
-'zsh-autosuggestions'
+    'mesa'
+    'xorg'
+    'xorg-server'
+    'xorg-xwininfo'
+    'xorg-xprop'
+    'xorg-xbacklight'
+    'xorg-xinit'
+    'xcompmgr'
+    'adobe-source-han-sans-jp-fonts'
+    'atool'
+    'base'
+    'base-devel'
+    'bc'
+    'bspwm'
+    'chromium'
+    'dosfstools'
+    'dunst'
+    'efibootmgr'
+    'ffmpeg'
+    'freerdp'
+    'gcc'
+    'git'
+    'gptfdisk'
+    'grub'
+    'htop'
+    'imagemagick'
+    'kitty'
+    'libnotify'
+    'linux'
+    'linux-firmware'
+    'make'
+    'man-db'
+    'mediainfo'
+    'moreutils'
+    'mpv'
+    'neofetch'
+    'networkmanager'
+    'nitrogen'
+    'ntfs-3g'
+    'p7zip'
+    'pamixer'
+    'pipewire'
+    'pipewire-pulse'
+    'pulsemixer'
+    'python'
+    'python-pip'
+    'ranger'
+    'rofi'
+    'rsync'
+    'scrot'
+    'socat'
+    'starship'
+    'sudo'
+    'sxiv'
+    'sxhkd'
+    'thunar'
+    'ttc-iosevka'
+    'ttf-font-awesome'
+    'ufw'
+    'unclutter'
+    'unrar'
+    'unzip'
+    'vim'
+    'wget'
+    'youtube-dl'
+    'zathura'
+    'zip'
+    'zsh'
+    'zsh-syntax-highlighting'
+    'zsh-autosuggestions'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -130,11 +122,11 @@ echo -e "\nDone!\n"
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel -s /bin/bash snow >/dev/null 2>&1
-	passwd snow
-	cp -R /root/glowie /home/snow/ >/dev/null 2>&1
-    	chown -R snow: /home/snow/glowie >/dev/null 2>&1
-	hostnamectl set-hostname Meito >/dev/null 2>&1
+    passwd snow
+    cp -R /root/glowie /home/snow/ >/dev/null 2>&1
+    chown -R snow: /home/snow/glowie >/dev/null 2>&1
+    hostnamectl set-hostname Meito >/dev/null 2>&1
 else
-	echo "You are already a user proceed with aur installs"
+    echo "You are already a user proceed with aur installs"
 fi
 
