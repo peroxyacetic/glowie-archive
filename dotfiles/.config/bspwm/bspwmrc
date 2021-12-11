@@ -26,5 +26,3 @@ bspc rule -a Discord desktop='^6'
 
 # Autostart
 nitrogen --restore &
-polybar example &
-betterlockscreen -u /home/snow/.cache/wal/nya.png
