@@ -120,3 +120,12 @@ super + F3
 super + F4
 	kitty pulsemixer
 	
+# audio
+XF86XK_AudioMute
+	pamixer -t;
+
+XF86XK_AudioRaiseVolume
+	pamixer --allow-boost -i 3;
+	
+XF86XK_AudioLowerVolume
+	pamixer --allow-boost -d 3;
