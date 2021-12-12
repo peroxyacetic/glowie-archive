@@ -51,6 +51,8 @@ PKGS=(
     'base'
     'base-devel'
     'bc'
+    'bluez'
+    'bluez-utils'
     'bspwm'
     'chromium'
     'dosfstools'
