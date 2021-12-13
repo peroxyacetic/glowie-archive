@@ -27,7 +27,7 @@ Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
 Run `betterlockscreen -u /home/snow/.cache/wal/nya.png`
 
-Set `startx` in `/etc/profile`.
+Add `startx` to `/etc/profile`.
 
 ## bspwm
 
