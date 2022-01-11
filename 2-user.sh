@@ -26,8 +26,6 @@ PKGS=(
     'polybar'
     'clearine-git'
     'betterlockscreen'
-    'spotify'
-    'jellyfin-media-player'
 )
 
 for PKG in "${PKGS[@]}"; do
