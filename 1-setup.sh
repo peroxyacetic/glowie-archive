@@ -109,6 +109,7 @@ PKGS=(
     'unzip'
     'vim'
     'wget'
+    'xfce4-power-manager'
     'youtube-dl'
     'zathura'
     'zip'
@@ -118,7 +119,7 @@ PKGS=(
 )
 
 for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
+    echo "Installing: ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed >/dev/null 2>&1
 done
 
