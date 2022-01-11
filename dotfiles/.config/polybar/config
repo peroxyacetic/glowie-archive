@@ -72,7 +72,7 @@ font-7 = "SourceHanSansJP-Normal:pixelsize=10;1"
 
 modules-left = bspwm 
 modules-center = 
-modules-right = memory filesystem cpu date battery powermenu
+modules-right = pulseaudio memory filesystem cpu date battery powermenu
 
 
 tray-position = none
